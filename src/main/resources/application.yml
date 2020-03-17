@@ -1,0 +1,7 @@
+# Gamello Default Ludo Microservice Configuration
+# intended use: configuring properties equal for all profiles
+spring:
+    application:
+        name: ludo
+    main:
+        banner-mode: off

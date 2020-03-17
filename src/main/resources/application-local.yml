@@ -1,0 +1,38 @@
+# Gamello Local Ludo Microservice Configuration
+# intended use: running on local machine
+spring:
+    activemq:
+        broker-url: tcp://localhost:61616
+        user: admin
+        password: admin
+    cache:
+        type: redis
+    redis:
+        host: 127.0.0.1
+        port: 6379
+aws:
+    access: xxx
+    secret: xxx
+    regions:
+        dynamodb: eu-central-1
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka/
+websocket:
+    relay:
+        host: localhost
+        port: 61613
+        destination-prefixes: /topic, /queue
+    credentials:
+        system-login: admin
+        system-password: admin
+    application-destination-prefixes: /app
+    user-destination-prefix: /user
+    stomp:
+        endpoint: /websocket
+        allowed-origins: "*"
+task-executor:
+    core-pool-size: 1
+    max-pool-size: 4
+    queue-capacity: 2500
